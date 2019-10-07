@@ -38,7 +38,7 @@ Debug/
 Middlewares/
 Old/
 pins.lst
-stm32f407xx.h
+/stm32f407xx.h
 STM32F4xx_StdPeriph_Driver/
 TrueStudio/
 *.xlsx
