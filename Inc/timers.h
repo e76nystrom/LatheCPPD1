@@ -1,4 +1,4 @@
-#ifdef __STM32F4xx_HAL_H
+#if defined(__STM32F4xx_HAL_H) || defined(__STM32F7xx_HAL_H) || defined(STM32H7xx_HAL_H)
 #if !defined(__TIMERS_H)
 #define __TIMERS_H
 
@@ -15,14 +15,14 @@ step3       4
 step3Pwm    2
 step4       3
 step4Pwm    2
-usecTmr     6
-encTestTmr  7
 spindleTmr  8
 spindlePwm  4
+usecTmr     6
+encTestTmr  7
+cmpTmr      9
 indexTmr    10
 intTmr      11
 intTmrPwm   0
-cmpTmr      9
 pwmTmr      12
 pwmTmrPwm   1
 step3Isr    TIM4
@@ -43,14 +43,14 @@ pwmTmrIsr   TIM8_BRK_TIM12
 #define STEP3_PWM2
 #define STEP4_TIM3
 #define STEP4_PWM2
-#define USEC_TMR_TIM6
-#define ENC_TMR_TIM7
 #define SPINDLE_TMR8
 #define SPINDLE_PWM4
+#define USEC_TMR_TIM6
+#define ENC_TMR_TIM7
+#define CMP_TMR9
 #define INDEX_TMR10
 #define INT_TMR11
 #define INT_TMR_PWM0
-#define CMP_TMR9
 #define PWM_TMR12
 #define PWM_TMR_PWM1
 
@@ -63,10 +63,10 @@ constexpr uint32_t DIR_SPIN_BIT = Dir5_Pin;
 
 inline void dirSpinFwd() {DIR_SPIN_PORT->BSRR = spA.dirFwd;}
 inline void dirSpinRev() {DIR_SPIN_PORT->BSRR = spA.dirRev;}
-inline void dirZFwd() {DIR_SPIN_PORT->BSRR = zAxis.dirFwd;}
-inline void dirZRev() {DIR_SPIN_PORT->BSRR = zAxis.dirRev;}
-inline void dirXFwd() {DIR_SPIN_PORT->BSRR = xAxis.dirFwd;}
-inline void dirXRev() {DIR_SPIN_PORT->BSRR = xAxis.dirRev;}
+inline void dirZFwd() {Dir1_GPIO_Port->BSRR = zAxis.dirFwd;}
+inline void dirZRev() {Dir1_GPIO_Port->BSRR = zAxis.dirRev;}
+inline void dirXFwd() {Dir2_GPIO_Port->BSRR = xAxis.dirFwd;}
+inline void dirXRev() {Dir2_GPIO_Port->BSRR = xAxis.dirRev;}
 inline uint32_t CALC_STEP_WIDTH(uint32_t x) {return((cfgFcy * x) / 1000000l);}
 
 /* zTmr timer 2 pwm 1 */
@@ -197,7 +197,7 @@ inline uint16_t step3TmrMaxRead()       {return(TIM4->ARR);}
 
 #define STEP3_TMR_PWM 2
 
-inline void     step3TmrCCR(uint16_t x) {TIM4->CCR1 = (x);}
+inline void     step3TmrCCR(uint16_t x) {TIM4->CCR2 = (x);}
 inline void     step3TmrPWMMode()       \
 	{TIM4->CCMR1 = (TIM_CCMR1_OC2M_2 | TIM_CCMR1_OC2M_1);}
 inline void     step3TmrPWMEna()        {TIM4->CCER |= TIM_CCER_CC2E;}
@@ -241,7 +241,7 @@ inline uint16_t step4TmrMaxRead()       {return(TIM3->ARR);}
 
 #define STEP4_TMR_PWM 2
 
-inline void     step4TmrCCR(uint16_t x) {TIM3->CCR1 = (x);}
+inline void     step4TmrCCR(uint16_t x) {TIM3->CCR2 = (x);}
 inline void     step4TmrPWMMode()       \
 	{TIM3->CCMR1 = (TIM_CCMR1_OC2M_2 | TIM_CCMR1_OC2M_1);}
 inline void     step4TmrPWMEna()        {TIM3->CCER |= TIM_CCER_CC2E;}

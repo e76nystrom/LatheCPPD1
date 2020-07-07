@@ -99,8 +99,8 @@ void Error_Handler(void);
 #define Dir2_GPIO_Port GPIOC
 #define Dir5_Pin GPIO_PIN_1
 #define Dir5_GPIO_Port GPIOC
-#define SPI_Sel_Pin GPIO_PIN_2
-#define SPI_Sel_GPIO_Port GPIOC
+#define SPI_SEL_Pin GPIO_PIN_2
+#define SPI_SEL_GPIO_Port GPIOC
 #define Dir1_Pin GPIO_PIN_3
 #define Dir1_GPIO_Port GPIOC
 #define PinA10_Pin GPIO_PIN_0
@@ -194,10 +194,10 @@ void Error_Handler(void);
 #define Step2b_GPIO_Port GPIOA
 #define PinA16_Pin GPIO_PIN_9
 #define PinA16_GPIO_Port GPIOA
-#define SPI_Sck_Pin GPIO_PIN_10
-#define SPI_Sck_GPIO_Port GPIOC
-#define SPI_Miso_Pin GPIO_PIN_11
-#define SPI_Miso_GPIO_Port GPIOC
+#define SPI_SCK_Pin GPIO_PIN_10
+#define SPI_SCK_GPIO_Port GPIOC
+#define SPI_MISO_Pin GPIO_PIN_11
+#define SPI_MISO_GPIO_Port GPIOC
 #define Uart5Tx_Pin GPIO_PIN_12
 #define Uart5Tx_GPIO_Port GPIOC
 #define Pin12_Pin GPIO_PIN_0
@@ -216,20 +216,20 @@ void Error_Handler(void);
 #define Pin11_GPIO_Port GPIOD
 #define Dir4_Pin GPIO_PIN_7
 #define Dir4_GPIO_Port GPIOD
-#define SPI_Mosi_Pin GPIO_PIN_5
-#define SPI_Mosi_GPIO_Port GPIOB
-#define I2C_Scl_Pin GPIO_PIN_6
-#define I2C_Scl_GPIO_Port GPIOB
-#define I2C_Sda_Pin GPIO_PIN_7
-#define I2C_Sda_GPIO_Port GPIOB
+#define SPI_MOSI_Pin GPIO_PIN_5
+#define SPI_MOSI_GPIO_Port GPIOB
+#define I2C_SCL_Pin GPIO_PIN_6
+#define I2C_SCL_GPIO_Port GPIOB
+#define I2C_SDA_Pin GPIO_PIN_7
+#define I2C_SDA_GPIO_Port GPIOB
 #define Dbg8_Pin GPIO_PIN_8
 #define Dbg8_GPIO_Port GPIOB
 #define Dbg7_Pin GPIO_PIN_9
 #define Dbg7_GPIO_Port GPIOB
 #define Pin15_Pin GPIO_PIN_0
 #define Pin15_GPIO_Port GPIOE
-#define Index1_Pin GPIO_PIN_1
-#define Index1_GPIO_Port GPIOE
+#define Index_Pin GPIO_PIN_1
+#define Index_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
