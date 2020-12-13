@@ -1302,7 +1302,7 @@ static void MX_GPIO_Init(void)
 
 ssize_t _write (int fd, const char* buf, size_t nbyte);
 
-void _init()
+void _init(void)
 {
 }
 
@@ -1328,33 +1328,33 @@ caddr_t _sbrk(int incr)
  return (caddr_t) prev_heap_end;
 }
 
-void _close()
+void _close(void)
 {
 }
 
-int _fstat()
+int _fstat(void)
 {
  return(0);
 }
 
-int _isatty()
+int _isatty(void)
 {
  return(1);
 }
 
-void _lseek()
+void _lseek(void)
 {
 }
 
-void _read()
+void _read(void)
 {
 }
 
-void _kill()
+void _kill(void)
 {
 }
 
-void _getpid()
+void _getpid(void)
 {
 }
 
