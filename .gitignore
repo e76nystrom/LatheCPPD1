@@ -32,7 +32,8 @@
 .vs/
 _FLASH.ld
 conPin.csv
-cscope*
+cscope.files
+cscope.out
 Debug/
 Middlewares/
 Old/
@@ -46,3 +47,4 @@ TrueStudio/
 Pinout.csv
 pinsD.csv
 pinsD.xlsx
+STM32CubeIDE
