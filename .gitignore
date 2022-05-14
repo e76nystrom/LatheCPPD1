@@ -48,3 +48,6 @@ Pinout.csv
 pinsD.csv
 pinsD.xlsx
 STM32CubeIDE
+.idea/*
+cmake-build-debug/*
+include
