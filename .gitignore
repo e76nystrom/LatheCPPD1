@@ -22,7 +22,6 @@
 *.sh
 *.sln
 *.tmp
-*.txt
 *.xls*
 *.zip
 *~
@@ -51,3 +50,4 @@ STM32CubeIDE
 .idea/*
 cmake-build-debug/*
 include
+LICENSE.txt
