@@ -30,7 +30,7 @@ add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 #add_compile_options(-mfloat-abi=soft)
 
 add_compile_options(-mcpu=cortex-m4 -mthumb -mthumb-interwork)
-add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
+add_compile_options(-fno-exceptions -ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 add_compile_options(-fno-move-loop-invariants --save-temps)
 
 # uncomment to mitigate c++17 absolute addresses warnings
@@ -73,6 +73,7 @@ set(SOURCES1 ../LatheCPP/lathe_src/arc.cpp ../LatheCPP/lathe_src/encoder.cpp ../
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F407VGTX_FLASH.ld)
 
 add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
+add_link_options(-Wl,--no-warn-rwx-segments)
 add_link_options(-mcpu=cortex-m4 -mthumb -mthumb-interwork)
 add_link_options(-T ${LINKER_SCRIPT})
 
