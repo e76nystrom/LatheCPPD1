@@ -1,7 +1,7 @@
 #THIS FILE IS AUTO GENERATED FROM THE TEMPLATE! DO NOT CHANGE!
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.25)
 
 # specify cross-compilers and tools
 set(CMAKE_C_COMPILER arm-none-eabi-gcc)
@@ -66,6 +66,7 @@ include_directories(../LatheCPP/include)
 add_definitions()
 
 add_definitions(-DSTM32F407xx -DSTM32F4 -DCORE407V -DLATHE_CPP -DCLION)
+add_definitions(-DSPI_SYNC)
 
 file(GLOB_RECURSE SOURCES "Startup/*.*" "Src/*.*" "Drivers/*.*")
 set(SOURCES1 ../LatheCPP/lathe_src/arc.cpp ../LatheCPP/lathe_src/encoder.cpp ../LatheCPP/lathe_src/getSP.S ../LatheCPP/lathe_src/i2cx.cpp ../LatheCPP/lathe_src/interrupts.cpp ../LatheCPP/lathe_src/lathe.cpp ../LatheCPP/lathe_src/latheX.cpp ../LatheCPP/lathe_src/lcd.cpp ../LatheCPP/lathe_src/lclcmd.cpp ../LatheCPP/lathe_src/lclcmdX.cpp ../LatheCPP/lathe_src/mainLoop.cpp ../LatheCPP/lathe_src/pid.cpp ../LatheCPP/lathe_src/pidAutoTune.cpp ../LatheCPP/lathe_src/remcmd.cpp ../LatheCPP/lathe_src/remfunc.cpp ../LatheCPP/lathe_src/remvar.cpp ../LatheCPP/lathe_src/serialio.cpp ../LatheCPP/lathe_src/spix.cpp ../LatheCPP/lathe_src/stm32Info.cpp ../LatheCPP/lathe_src/xcontrol.cpp ../LatheCPP/lathe_src/zcontrol.cpp)
